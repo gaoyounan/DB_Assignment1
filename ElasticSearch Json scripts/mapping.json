@@ -1,0 +1,28 @@
+{
+    "mappings": {
+        "_doc": {
+            "properties": {
+                "bus_join": {
+                    "type": "join",
+                    "relations": {
+                        "trip": "stop_time"
+                    }
+                },
+                "trip_id": {
+                    "type": "text"
+                },
+                "arrival_time": {
+                    "type": "date",
+                    "format": "HH:mm:ss"
+                },
+                "departure_time": {
+                    "type": "date",
+                    "format": "HH:mm:ss"
+                },
+                "stop_sequence": {
+                    "type": "long"
+                }
+            }
+        }
+    }
+}
