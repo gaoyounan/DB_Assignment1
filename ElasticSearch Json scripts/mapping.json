@@ -22,11 +22,11 @@
                 },
                 "arrival_time": {
                     "type": "date",
-                    "format": "HH:mm:ss"
+                    "format":"HH:mm:ss.SSS"
                 },
                 "departure_time": {
-                    "type": "date",
-                    "format": "HH:mm:ss"
+                    "type": "text",
+                   "format": "HH:mm:ss.SSS"
                 },
                 "stop_sequence": {
                     "type": "long"
@@ -35,3 +35,4 @@
         }
     }
 }
+
