@@ -2,13 +2,22 @@
     "mappings": {
         "_doc": {
             "properties": {
-                "bus_join": {
-                    "type": "join",
-                    "relations": {
-                        "trip": "stop_time"
-                    }
+                "route_id": {
+                    "type": "text"
+                },
+                "trip_headsign": {
+                    "type": "text"
+                },
+                "service_id": {
+                    "type": "text"
+                },
+                "shape_id": {
+                    "type": "text"
                 },
                 "trip_id": {
+                    "type": "text"
+                },
+                "name_stop": {
                     "type": "text"
                 },
                 "arrival_time": {
