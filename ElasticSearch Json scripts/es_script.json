@@ -1,0 +1,56 @@
+// A) GET new_buss/_search
+{
+    "_source": "route_id",
+    "query": {
+        "simple_query_string": {
+            "query": "larry Uteck Blvd opposite Ecole Beaubassin",
+            "fields": [
+                "name_stop"
+            ]
+        }
+    }
+}
+//B) GET bustime_search
+{
+    "_source": "route_id",
+    "from": 0,
+    "size": 1,
+    "query": {
+        "range": {
+            "arrival_time": {
+                "gte": "6:00:00.000",
+                "lte": "23:59:59.000",
+                "format": "HH:mm:ss.sss"
+            }
+        }
+    },
+    "aggs": {
+        "by_rout": {
+            "terms": {
+                "field": "trip_headsign"
+            }
+        }
+    }
+}
+
+// GET bustime/_search
+{
+    "_source": "{field}",
+    "query": {
+        "range": {
+            "arrival_time": {
+                "gte": "06:00:00.000",
+                "lte": "23:59:00.000",
+                "format": "HH:mm:ss.SSS"
+            }
+        }
+    },
+    "aggs": {
+        "test": {
+            "terms": {
+                "field": "route_id",
+                "size": 10
+            }
+        }
+    }
+}
